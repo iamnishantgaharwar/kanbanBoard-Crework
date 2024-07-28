@@ -71,7 +71,7 @@ const Dashboard = () => {
 				<div className="mt-4 text-xl ">
 					<ul className="flex flex-col gap-1">
 						<Link href="/dashboard">
-							<li className="p-2 border rounded flex">
+							<li className={`${pathname == "/dashboard" ? "font-bold": "null"} p-2 border rounded flex`}>
 								<Home
 									className="w-6 h-6 mr-5"
 									color="#666666"
@@ -80,7 +80,7 @@ const Dashboard = () => {
 							</li>
 						</Link>
 						<Link href="/dashboard/board">
-							<li className=" p-2 border rounded flex">
+            <li className={`${pathname == "/dashboard/board" ? "font-bold": "null"} p-2 border rounded flex`}>
 								<SquareKanban
 									className="w-6 h-6 mr-5"
 									color="#666666"
@@ -89,7 +89,7 @@ const Dashboard = () => {
 							</li>
 						</Link>
 						<Link href="/dashboard/settings">
-							<li className=" p-2 border rounded flex">
+            <li className={`${pathname == "/dashboard/settings" ? "font-bold": "null"} p-2 border rounded flex`}>
 								<Settings2
 									className="w-6 h-6 mr-5"
 									color="#666666"
@@ -98,7 +98,7 @@ const Dashboard = () => {
 							</li>
 						</Link>
 						<Link href="/dashboard/teams">
-							<li className=" p-2 border rounded flex">
+            <li className={`${pathname == "/dashboard/teams" ? "font-bold": "null"} p-2 border rounded flex`}>
 								<Users
 									className="w-6 h-6 mr-5"
 									color="#666666"
@@ -107,7 +107,7 @@ const Dashboard = () => {
 							</li>
 						</Link>
 						<Link href="/dashboard/analytics">
-							<li className=" p-2 border rounded flex">
+            <li className={`${pathname == "/dashboard/analytics" ? "font-bold": "null"} p-2 border rounded flex`}>
 								<ChartLine
 									className="w-6 h-6 mr-5"
 									color="#666666"
@@ -122,9 +122,13 @@ const Dashboard = () => {
 						Create New Task <CirclePlus className="ml-2" />
 					</Button>
 				</div>
+        <footer className="mt-4 absolute bottom-2 left-2 right-0">
+          <p className="text-xs text-gray-500">
+            Made with ❤️ by <a target='_blank' href='https://nishantgaharwar.com' className='underline'>Nishant Gaharwar</a>
+          </p>
+        </footer>
 			</aside>
 			<section>
-				<h1>Dashboard</h1>
 				{renderComponent()}
 			</section>
 		</main>
